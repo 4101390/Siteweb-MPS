@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentation Premiers Soins</title>
+    <title>Présentation Premiers Soins</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -138,6 +138,11 @@
             margin: 1.5rem 0 1rem 0;
         }
         
+        h4 {
+            color: #4b5563;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -186,12 +191,22 @@
             border-radius: 0 5px 5px 0;
         }
         
+        .tip i {
+            color: #10b981;
+            margin-right: 10px;
+        }
+        
         .warning {
             background-color: #fef3c7;
             border-left: 4px solid #f59e0b;
             padding: 1rem;
             margin: 1.5rem 0;
             border-radius: 0 5px 5px 0;
+        }
+        
+        .warning i {
+            color: #f59e0b;
+            margin-right: 10px;
         }
         
         .legal-note {
@@ -246,6 +261,48 @@
             margin-top: 2rem;
         }
         
+        .scenario {
+            background-color: #f3f4f6;
+            border-left: 4px solid #8b5cf6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .scenario h4 {
+            color: #7c3aed;
+            margin-top: 0;
+        }
+        
+        .step-by-step {
+            background-color: #eff6ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .step {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #d1d5db;
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
         footer {
             background-color: #1e293b;
             color: white;
@@ -272,7 +329,6 @@
     </style>
 </head>
 <body>
-    <!-- Single Header Section -->
     <header>
         <div class="logo-container">
             <h1>Formation Premiers Soins</h1>
@@ -280,7 +336,6 @@
         <p class="subtitle">Ressources pour futurs moniteurs</p>
     </header>
     
-    <!-- Single Navigation Section -->
     <nav>
         <div class="nav-container">
             <button class="nav-btn active" data-target="accueil">Accueil</button>
@@ -290,7 +345,6 @@
             <button class="nav-btn" data-target="traumatismes">Traumatismes</button>
             <button class="nav-btn" data-target="medical">Urgences Médicales</button>
             <button class="nav-btn" data-target="environment">Problèmes Environnementaux</button>
-            <button class="nav-btn" data-target="aquatique">Sauvetage Aquatique</button>
             <button class="nav-btn" data-target="ressources">Ressources Pédagogiques</button>
         </div>
     </nav>
@@ -506,6 +560,31 @@
             <h3>Utilisation du DEA</h3>
             <p>Le DEA peut être utilisé sur les adultes, les enfants et les bébés. Pour les enfants de moins de 8 ans ou pesant moins de 25 kg, utilisez des électrodes pédiatriques si disponibles.</p>
             
+            <div class="step-by-step">
+                <h4>Procédure DEA étape par étape:</h4>
+                <div class="step">
+                    <span class="step-number">1</span> Allumez le DEA
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span> Dénudez la poitrine et séchez-la si nécessaire
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span> Appliquez les électrodes comme indiqué
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span> Branchez le connecteur (si nécessaire)
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span> Éloignez-vous pendant l'analyse
+                </div>
+                <div class="step">
+                    <span class="step-number">6</span> Suivez les instructions vocales
+                </div>
+                <div class="step">
+                    <span class="step-number">7</span> Assurez-vous que personne ne touche la victime pendant la défibrillation
+                </div>
+            </div>
+            
             <div class="video-section">
                 <h3>Vidéos de démonstration RCR et DEA</h3>
                 <div class="video-grid">
@@ -552,16 +631,605 @@
             </div>
         </div>
         
-        <!-- Continue with other sections... (I've truncated for brevity, but all sections should follow the same pattern) -->
+        <!-- Obstruction Respiratoire -->
+        <div id="obstruction" class="tab-content">
+            <h2>Obstruction des Voies Respiratoires</h2>
+            
+            <h3>Reconnaissance de l'obstruction</h3>
+            <p>Signes d'une obstruction complète:</p>
+            <ul>
+                <li>Incapacité de parler, de respirer ou de tousser</li>
+                <li>Victime porte les mains à sa gorge (signe universel)</li>
+                <li>Peau pâle ou bleutée (cyanose)</li>
+                <li>Perte de conscience si non traitée</li>
+            </ul>
+            
+            <h3>Techniques de désobstruction</h3>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>Adulte et enfant conscient</span>
+                    <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <ol>
+                        <li>Demander "Êtes-vous étouffé?"</li>
+                        <li>S'identifier: "Je peux vous aider"</li>
+                        <li>Obstruction partielle: encourager à tousser</li>
+                        <li>Obstruction complète: donner 5 poussées abdominales (poussées thoraciques pour femme enceinte ou personne obèse)</li>
+                        <li>Alterner avec 5 tapes dans le dos si nécessaire</li>
+                        <li>Continuer jusqu'à désobstruction ou perte de conscience</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>Bébé conscient</span>
+                    <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <ol>
+                        <li>Placer le bébé face vers le bas sur l'avant-bras, tête plus basse que le corps</li>
+                        <li>Donner 5 tapes fermes entre les omoplates</li>
+                        <li>Retourner le bébé sur le dos</li>
+                        <li>Donner 5 poussées thoraciques (comme pour la RCR mais plus lentes)</li>
+                        <li>Répéter jusqu'à désobstruction ou perte de conscience</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>Victime inconsciente</span>
+                    <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <ol>
+                        <li>Activer les SPU et chercher un DEA</li>
+                        <li>Commencer la RCR (30 compressions)</li>
+                        <li>Avant les insufflations, vérifier la bouche et retirer tout objet visible</li>
+                        <li>Tenter 2 insufflations</li>
+                        <li>Si l'air ne passe pas, reprendre les compressions</li>
+                        <li>Répéter la séquence</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="scenario">
+                <h4>Situation d'urgence - Étouffement au restaurant</h4>
+                <p><strong>Contexte:</strong> Vous êtes dans un restaurant et un client adulte à la table voisine commence à s'étouffer avec un morceau de viande. Il se lève, porte les mains à sa gorge, ne peut pas parler et son visage commence à virer au bleu.</p>
+                
+                <div class="step-by-step">
+                    <h4>Intervention étape par étape:</h4>
+                    <div class="step">
+                        <span class="step-number">1</span> Approchez-vous et demandez: "Êtes-vous en train de vous étouffer?"
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span> S'il hoche la tête ou ne peut répondre, annoncez: "Je vais vous aider"
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span> Positionnez-vous derrière la victime et placez un poing fermé au-dessus de son nombril
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span> Donnez 5 poussées abdominales fermes vers le haut
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span> Si l'objet n'est pas expulsé, donnez 5 tapes dans le dos entre les omoplates
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span> Continuez à alterner jusqu'à ce que l'objet soit expulsé ou que la victime perde conscience
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-section">
+                <h3>Vidéos sur l'obstruction respiratoire</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/PA9hpOnvtCk" title="Manœuvre de Heimlich" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Manœuvre de Heimlich (adulte)</div>
+                            <div class="video-desc">Technique de désobstruction pour adulte</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/9kYxTOu-voU" title="Étouffement chez le bébé" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Étouffement chez le bébé</div>
+                            <div class="video-desc">Techniques adaptées aux nourrissons</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/cS-7Oc7y5LM" title="Cas réel d'étouffement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Cas réel d'étouffement</div>
+                            <div class="video-desc">Intervention en situation réelle</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/v1xK7I6YF8E" title="Obstruction complète et partielle" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Différenciation complète/partielle</div>
+                            <div class="video-desc">Comment reconnaître le type d'obstruction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <!-- I'm showing only the first few sections for brevity. All other sections should follow the same corrected pattern -->
+        <!-- Traumatismes -->
+        <div id="traumatismes" class="tab-content">
+            <h2>Traumatismes et Blessures</h2>
+            
+            <h3>Évaluation primaire (ABCDE)</h3>
+            <ol>
+                <li><strong>A</strong> - Voies aériennes (Airway)</li>
+                <li><strong>B</strong> - Respiration (Breathing)</li>
+                <li><strong>C</strong> - Circulation (Circulation)</li>
+                <li><strong>D</strong> - Déficits neurologiques (Disability)</li>
+                <li><strong>E</strong> - Exposition (Exposure/Environment)</li>
+            </ol>
+            
+            <h3>Contrôle des hémorragies</h3>
+            <p>Ordre des interventions pour une hémorragie externe:</p>
+            <ol>
+                <li>Pression directe sur la plaie</li>
+                <li>Surélévation du membre blessé</li>
+                <li>Pression sur les points de compression</li>
+                <li>Garrot (en dernier recours)</li>
+            </ol>
+            
+            <div class="warning">
+                <p><i class="fas fa-exclamation-triangle"></i> <strong>Corps étranger:</strong> Ne retirez jamais un corps étranger planté dans une plaie. Stabilisez-le avec des compresses et appliquez une pression autour de l'objet.</p>
+            </div>
+            
+            <h3>Blessures musculo-squelettiques</h3>
+            <p>Signes d'une fracture:</p>
+            <ul>
+                <li>Douleur intense au site de la blessure</li>
+                <li>Déformation visible ou position anormale</li>
+                <li>Enflure et ecchymose</li>
+                <li>Incapacité de bouger la partie atteinte</li>
+                <li>Crépitation (bruit d'os frottant)</li>
+            </ul>
+            
+            <div class="tip">
+                <p><i class="fas fa-lightbulb"></i> <strong>Règle mnémotechnique:</strong> Pour immobiliser une fracture, souvenez-vous de la règle "Au-dessus et en-dessous". Immobilisez toujours l'articulation au-dessus et l'articulation en-dessous de la fracture.</p>
+            </div>
+            
+            <div class="scenario">
+                <h4>Situation d'urgence - Accident de vélo</h4>
+                <p><strong>Contexte:</strong> Un cycliste adulte tombe lourdement en descendant une pente. Il ne porte pas de casque et semble avoir atterri sur son bras droit. Il est conscient mais présente une déformation évidente de l'avant-bras droit. Le membre est enflé et douloureux.</p>
+                
+                <div class="step-by-step">
+                    <h4>Intervention étape par étape:</h4>
+                    <div class="step">
+                        <span class="step-number">1</span> Évaluez les ABCDE (s'assurer que les voies respiratoires sont libres)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span> Appelez les SPU (signes évidents de fracture)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span> Stabilisez la tête et le cou (chute importante sans casque)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span> Immobilisez le membre dans la position trouvée
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span> Appliquez une attelle improvisée (journal roulé, planche)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span> Surveillez les signes vitaux en attendant les secours
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-section">
+                <h3>Vidéos sur les traumatismes</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/uN4lI7kXKXU" title="Contrôle des hémorragies" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Contrôle des hémorragies</div>
+                            <div class="video-desc">Techniques pour arrêter les saignements</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/xXlZ2NqG-3c" title="Immobilisation de fractures" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Immobilisation de fractures</div>
+                            <div class="video-desc">Techniques d'attelles et d'écharpes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/cL5j0t-CXWs" title="Blessures à la tête et colonne" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Blessures à la tête et colonne</div>
+                            <div class="video-desc">Prise en charge des traumatismes crâniens</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/8VK8X8JhF8g" title="Pansement compressif" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Pansement compressif</div>
+                            <div class="video-desc">Comment faire un pansement compressif efficace</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
+        <!-- Urgences Médicales -->
+        <div id="medical" class="tab-content">
+            <h2>Urgences Médicales</h2>
+            
+            <h3>Signes vitaux normaux</h3>
+            <ul>
+                <li><strong>Adulte:</strong> Fréquence respiratoire: 12-20/min • Pouls: 60-100/min</li>
+                <li><strong>Enfant:</strong> Fréquence respiratoire: 20-30/min • Pouls: 70-120/min</li>
+                <li><strong>Bébé:</strong> Fréquence respiratoire: 30-60/min • Pouls: 100-160/min</li>
+            </ul>
+            
+            <h3>Reconnaissance de l'AVC (acronyme VITE)</h3>
+            <ul>
+                <li><strong>V</strong>isage - Asymétrie du visage</li>
+                <li><strong>I</strong>ncapacité - Faiblesse d'un côté du corps</li>
+                <li><strong>T</strong>rouble de la parole - Difficulté à parler</li>
+                <li><strong>E</strong>xtrême urgence - Appeler immédiatement les SPU</li>
+            </ul>
+            
+            <h3>Crise cardiaque</h3>
+            <p>Signes et symptômes:</p>
+            <ul>
+                <li>Douleur thoracique (pression, serrement)</li>
+                <li>Douleur irradiant au bras, cou, mâchoire</li>
+                <li>Nausées, vomissements</li>
+                <li>Sudation, pâleur</li>
+                <li>Essoufflement, anxiété</li>
+            </ul>
+            
+            <div class="tip">
+                <p><i class="fas fa-lightbulb"></i> <strong>Médication d'urgence:</strong> Vous pouvez aider une victime consciente à prendre de l'acide acétylsalicylique (AAS, ex: Aspirine) si elle n'y est pas allergique et n'a pas reçu de contre-indication médicale. Pour un adulte: 325 mg ou 2-4 comprimés de 80-81 mg.</p>
+            </div>
+            
+            <h3>Choc anaphylactique</h3>
+            <p>Signes d'une réaction allergique grave:</p>
+            <ul>
+                <li>Difficulté respiratoire, respiration sifflante</li>
+                <li>Gonflement du visage, langue, gorge</li>
+                <li>Urticaire, rougeur cutanée</li>
+                <li>Nausées, vomissements</li>
+                <li>État de choc, perte de conscience</li>
+            </ul>
+            
+            <div class="scenario">
+                <h4>Situation d'urgence - Suspicion d'AVC au bureau</h4>
+                <p><strong>Contexte:</strong> Un collègue de 55 ans se plaint soudainement d'un mal de tête intense. Vous remarquez que le côté gauche de son visage semble affaissé. Il a de la difficulté à vous parler et son bras droit semble faible. Il tente de se lever mais trébuche.</p>
+                
+                <div class="step-by-step">
+                    <h4>Intervention étape par étape:</h4>
+                    <div class="step">
+                        <span class="step-number">1</span> Évaluez rapidement: VITE (Visage, Incapacité, Trouble de parole, Extrême urgence)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span> Appelez immédiatement les SPU (l'AVC est une urgence médicale absolue)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span> Aidez la victime à s'asseoir ou à s'allonger confortablement
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span> Notez l'heure d'apparition des premiers symptômes
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span> Ne donnez ni nourriture ni boisson
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span> Surveillez les signes vitaux en attendant les secours
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-section">
+                <h3>Vidéos sur les urgences médicales</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/wB6nc7nRPr4" title="Reconnaître un AVC" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Reconnaître un AVC</div>
+                            <div class="video-desc">Signes et interventions rapides</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/DEgB7Q0EcnI" title="Crise cardiaque" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Crise cardiaque</div>
+                            <div class="video-desc">Symptômes et premiers soins</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/C6HrH2QMq4A" title="Choc anaphylactique" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Choc anaphylactique</div>
+                            <div class="video-desc">Utilisation de l'auto-injecteur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/A5fycKz9ZqI" title="Crise d'asthme" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Crise d'asthme</div>
+                            <div class="video-desc">Intervention lors d'une crise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Problèmes Environnementaux -->
+        <div id="environment" class="tab-content">
+            <h2>Problèmes Liés à l'Environnement</h2>
+            
+            <h3>Hypothermie</h3>
+            <p>Signes selon la sévérité:</p>
+            <ul>
+                <li><strong>Légère (35-32°C):</strong> Frissons, peau pâle, difficulté à effectuer des tâches complexes</li>
+                <li><strong>Modérée (32-28°C):</strong> Frissons violents, confusion, perte de coordination</li>
+                <li><strong>Sévère (moins de 28°C):</strong> Arrêt des frissons, rigidité musculaire, perte de conscience, rythme cardiaque faible</li>
+            </ul>
+            
+            <div class="tip">
+                <p><i class="fas fa-lightbulb"></i> <strong>Réchauffement:</strong> Pour l'hypothermie légère à modérée, réchauffez progressivement la victime. Pour l'hypothermie sévère, manipulez-la avec précaution (risque de fibrillation ventriculaire) et recherchez une aide médicale urgente.</p>
+            </div>
+            
+            <h3>Coup de chaleur</h3>
+            <p>Différence entre épuisement dû à la chaleur et coup de chaleur:</p>
+            <ul>
+                <li><strong>Épuisement:</strong> Peau moite et pâle, température normale ou légèrement élevée, conscience normale</li>
+                <li><strong>Coup de chaleur:</strong> Peau chaude, rouge et sèche, température élevée (≥40°C), altération de la conscience, pouvant conduire au coma</li>
+            </ul>
+            
+            <h3>Brûlures</h3>
+            <p>Classification des brûlures:</p>
+            <ul>
+                <li><strong>1er degré:</strong> Rougeur, douleur, pas de cloques (ex: coup de soleil)</li>
+                <li><strong>2e degré:</strong> Rougeur, douleur intense, cloques</li>
+                <li><strong>3e degré:</strong> Peau blanche ou carbonisée, peu ou pas de douleur (nerfs détruits)</li>
+            </ul>
+            
+            <div class="warning">
+                <p><i class="fas fa-exclamation-triangle"></i> <strong>Traitement des brûlures:</strong> Refroidissez immédiatement à l'eau froide pendant 15-20 minutes. Ne jamais appliquer de glaçons directement sur la brûlure, ni percer les cloques, ni appliquer de produits gras.</p>
+            </div>
+            
+            <div class="scenario">
+                <h4>Situation d'urgence - Coup de chaleur lors d'un marathon</h4>
+                <p><strong>Contexte:</strong> Un coureur de marathon s'effondre par une journée chaude et humide (32°C). Il est confus, ne répond pas clairement aux questions. Sa peau est chaude, rouge et sèche au toucher. Il ne transpire plus malgré la chaleur.</p>
+                
+                <div class="step-by-step">
+                    <h4>Intervention étape par étape:</h4>
+                    <div class="step">
+                        <span class="step-number">1</span> Appelez immédiatement les SPU (suspicion de coup de chaleur)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span> Déplacez la victime à l'ombre ou dans un endroit frais
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span> Retirez les vêtements superflus
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span> Refroidissez activement (eau fraîche, ventilation, linges humides)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span> Surveillez attentivement la conscience et la respiration
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span> Préparez-vous à effectuer la RCR si nécessaire
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-section">
+                <h3>Vidéos sur les problèmes environnementaux</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/sGf_sxJZRxA" title="Hypothermie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Hypothermie</div>
+                            <div class="video-desc">Reconnaissance et traitement</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Gp8kLxTmd_w" title="Coup de chaleur" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Coup de chaleur</div>
+                            <div class="video-desc">Différences avec l'épuisement</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/n1dslunWRgU" title="Traitement des brûlures" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Traitement des brûlures</div>
+                            <div class="video-desc">Premiers soins pour brûlures</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/VF8KJgM_KpA" title="Gelures" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Gelures</div>
+                            <div class="video-desc">Prise en charge des gelures</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ressources Pédagogiques -->
+        <div id="ressources" class="tab-content">
+            <h2>Ressources pour Moniteurs</h2>
+            
+            <h3>Planification des cours</h3>
+            <p>Structure recommandée pour un cours de 16 heures:</p>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>Jour 1 (8 heures)</span>
+                    <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Introduction et aspects légaux (1h)</li>
+                        <li>Évaluation primaire et secondaire (2h)</li>
+                        <li>RCR adulte et enfant (théorie et pratique) (2h)</li>
+                        <li>Obstruction des voies respiratoires (1h)</li>
+                        <li>Utilisation du DEA (1h)</li>
+                        <li>Révision et questions (1h)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>Jour 2 (8 heures)</span>
+                    <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>RCR bébé et particularités (1h)</li>
+                        <li>Hémorragies et état de choc (1h)</li>
+                        <li>Blessures musculo-squelettiques (1h)</li>
+                        <li>Brûlures et problèmes environnementaux (1h)</li>
+                        <li>Urgences médicales (AVC, crise cardiaque, diabète) (2h)</li>
+                        <li>Mises en situation et évaluations pratiques (2h)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Conseils pour l'enseignement</h3>
+            <ul>
+                <li><strong>Apprentissage actif:</strong> Favorisez la pratique plutôt que la théorie pure. Les participants retiennent mieux en faisant.</li>
+                <li><strong>Retour immédiat:</strong> Donnez du feedback constructif pendant les exercices pratiques.</li>
+                <li><strong>Adaptation:</strong> Ajustez votre enseignement au rythme et aux besoins de votre groupe.</li>
+                <li><strong>Réalisme:</strong> Utilisez des mises en situation réalistes pour préparer les participants aux vraies urgences.</li>
+                <li><strong>Gestion du stress:</strong> Reconnaissez que les situations d'urgence sont stressantes. Enseignez des techniques de gestion du stress.</li>
+            </ul>
+            
+            <h3>Matériel recommandé pour l'enseignement</h3>
+            <ul>
+                <li>Mannequins de RCR (adulte, enfant, bébé)</li>
+                <li>Défibrillateur d'entraînement (DEA)</li>
+                <li>Masques de poche (adulte et pédiatrique)</li>
+                <li>Matériel de pansement et d'immobilisation</li>
+                <li>Aides visuelles (présentations, vidéos)</li>
+                <li>Fiches techniques et guides de référence</li>
+            </ul>
+            
+            <div class="tip">
+                <p><i class="fas fa-lightbulb"></i> <strong>Évaluation formative:</strong> Évaluez les participants tout au long de la formation plutôt que seulement à la fin. Cela permet d'identifier les difficultés tôt et d'y remédier.</p>
+            </div>
+            
+            <div class="video-section">
+                <h3>Vidéos pédagogiques pour moniteurs</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/fE4l3hvo1bM" title="Techniques d'enseignement" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Techniques d'enseignement</div>
+                            <div class="video-desc">Comment bien enseigner les premiers soins</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/gY6Fp-5_ug0" title="Gestion de groupe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Gestion de groupe</div>
+                            <div class="video-desc">Conseils pour animer une formation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/f-Kb8WjHcME" title="Préparation matérielle" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Préparation matérielle</div>
+                            <div class="video-desc">Comment organiser son matériel d'enseignement</div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/y5Z1N0lqR5M" title="Création de scénarios réalistes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-title">Création de scénarios</div>
+                            <div class="video-desc">Comment créer des mises en situation efficaces</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Liens utiles</h3>
+            <ul>
+                <li><a href="https://www.sauvetage.qc.ca" target="_blank">Société de sauvetage du Québec</a></li>
+                <li><a href="https://www.croixrouge.ca" target="_blank">Croix-Rouge canadienne</a></li>
+                <li><a href="https://www.heartandstroke.ca" target="_blank">Fondation des maladies du cœur et de l'AVC</a></li>
+                <li><a href="https://www.urgencequebec.gouv.qc.ca" target="_blank">Urgence Québec</a></li>
+                <li><a href="https://www.quebec.ca/sante/problemes-de-sante/a-z/formation-premiers-soins" target="_blank">Gouvernement du Québec - Formation premiers soins</a></li>
+            </ul>
+        </div>
     </div>
     
     <footer>
         <p>© 2026 Alex C. - Tous droits réservés</p>
         <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">College Laval</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">Premier Soins</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">Premiers Soins</p>
     </footer>
     
     <script>
@@ -638,6 +1306,16 @@
                     if (iframe) {
                         console.log('Opening video for training purposes');
                     }
+                }
+            });
+        });
+        
+        // Initialize first accordions as open
+        document.addEventListener('DOMContentLoaded', () => {
+            // Open first accordion in each section for better UX
+            document.querySelectorAll('.tab-content.active .accordion').forEach((accordion, index) => {
+                if (index === 0) {
+                    accordion.classList.add('active');
                 }
             });
         });
