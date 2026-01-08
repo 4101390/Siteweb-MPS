@@ -265,9 +265,17 @@
             <h1>Formation Premiers Soins</h1>
         </div>
         <p class="subtitle">Ressources pour</p>
+    </head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">PS</div>
+            <div>
+                <h1>Guide du Moniteur en Premiers Soins</h1>
+                <p class="subtitle">Ressources pédagogiques pour l'enseignement des premiers soins selon les normes de la Société de sauvetage</p>
+            </div>
+        </div>
     </header>
-    
-header>
     
     <div class="tabs" id="tabsContainer">
         <button class="tab active" data-tab="accueil">Accueil</button>
@@ -1068,7 +1076,99 @@ header>
         </div>
     </div>
     
+    <footer>
+        <p>© 2024 Guide du Moniteur en Premiers Soins. Ressources basées sur les normes de la Société de sauvetage.</p>
+        <p>Ce site est un outil pédagogique et ne remplace pas une formation officielle en premiers soins.</p>
+        <div class="footer-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#legal">Aspects légaux</a>
+            <a href="#rcr">RCR & DEA</a>
+            <a href="#ressources">Ressources pédagogiques</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">Pour toute question technique, référez-vous toujours à la documentation officielle de la Société de sauvetage.</p>
+    </footer>
+
+    <script>
+        // Gestion des onglets
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Retirer la classe active de tous les onglets et contenus
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Activer l'onglet cliqué
+                tab.classList.add('active');
+                
+                // Afficher le contenu correspondant
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Réinitialiser la recherche
+                document.getElementById('searchInput').value = '';
+                removeHighlights();
+            });
+        });
         
+        // Gestion des accordéons
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordion = header.parentElement;
+                accordion.classList.toggle('active');
+            });
+        });
+        
+        // Fonctionnalité de recherche
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            removeHighlights();
+            
+            if (searchTerm.length < 2) return;
+            
+            // Rechercher dans tous les contenus d'onglets actifs
+            const activeContent = document.querySelector('.tab-content.active');
+            if (!activeContent) return;
+            
+            // Exclure les éléments de vidéo et certains autres
+            const textElements = activeContent.querySelectorAll('h2, h3, p, li, .accordion-content, .video-title, .video-desc');
+            
+            textElements.forEach(element => {
+                const originalText = element.textContent;
+                const lowerText = originalText.toLowerCase();
+                
+                if (lowerText.includes(searchTerm)) {
+                    // Mettre en surbrillance le texte correspondant
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    const highlightedText = originalText.replace(regex, '<span class="highlight">$1</span>');
+                    
+                    // Sauvegarder le texte original si ce n'est pas déjà fait
+                    if (!element.dataset.originalText) {
+                        element.dataset.originalText = originalText;
+                    }
+                    
+                    element.innerHTML = highlightedText;
+                }
+            });
+        });
+        
+        function removeHighlights() {
+            document.querySelectorAll('[data-original-text]').forEach(element => {
+                element.innerHTML = element.dataset.originalText;
+                element.removeAttribute('data-original-text');
+            });
+        }
+        
+        // Initialisation - ouvrir le premier accordéon sur la page d'accueil
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstAccordion = document.querySelector('.accordion');
+            if (firstAccordion) {
+                firstAccordion.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
     </main>
     
     <footer>
